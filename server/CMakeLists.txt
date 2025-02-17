@@ -7,4 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
+# target_include_directories(${PROJECT_NAME} PRIVATE ftp-common)
+target_link_libraries(${PROJECT_NAME} PRIVATE ftp-common)
+
 add_subdirectory(tests)
