@@ -1,23 +1,18 @@
-# clang-format 18.1.0
+# clang-format 17.0.0
 ---
 Standard: Latest
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: {}
 AlignConsecutiveBitFields:
   Enabled: true
   AcrossEmptyLines: true
   AcrossComments: true
 AllowShortEnumsOnASingleLine: false
-AlignConsecutiveDeclarations: {}
-AlignConsecutiveShortCaseStatements: {}
 AlignEscapedNewlines: Left
 AlignOperands: Align
 AlignTrailingComments:
   Kind: Always
 AllowAllParametersOfDeclarationOnNextLine: false
-AllowBreakBeforeNoexceptSpecifier: OnlyWithParen
-AllowShortCompoundRequirementOnASingleLine: true
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: None
