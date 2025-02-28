@@ -5,4 +5,32 @@ project(ftp-common LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-add_library(${PROJECT_NAME} stub.cpp)
+FetchContent_Declare(
+    asio
+    GIT_REPOSITORY git@github.com:chriskohlhoff/asio.git
+    GIT_TAG asio-1-32-0
+)
+FetchContent_MakeAvailable(asio)
+
+find_package(Threads REQUIRED)
+
+add_library(${PROJECT_NAME} STATIC)
+
+target_sources(${PROJECT_NAME}
+    PRIVATE
+        src/private/asio_broadcast.h
+        src/private/asio_connection.h
+        src/private/asio_connection.cpp
+)
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        include
+    PRIVATE
+        ${asio_SOURCE_DIR}/asio/include
+)
+
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        Threads::Threads # TODO: Get rid of 'asio' threading.
+)
