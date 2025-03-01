@@ -18,9 +18,12 @@ add_library(${PROJECT_NAME} STATIC)
 
 target_sources(${PROJECT_NAME}
     PRIVATE
+        src/private/asio_broadcast.cpp
         src/private/asio_broadcast.h
-        src/private/asio_connection.h
-        src/private/asio_connection.cpp
+        src/private/asio_client_connection.cpp
+        src/private/asio_client_connection.h
+        src/private/asio_server_connection.cpp
+        src/private/asio_server_connection.h
 )
 
 target_include_directories(${PROJECT_NAME}
